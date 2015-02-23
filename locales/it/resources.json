@@ -1,0 +1,71 @@
+{
+  "app": {
+    "name": "Alexandre Massimo"
+  },
+  "nav": {
+    "home": "Inizio",
+    "about": "Su di me",
+    "gallery": "Galeria",
+    "contact": "Parli con me",
+    "lang" : {
+    	"english" : "English",
+    	"english_short" : "EN",
+    	"italian" : "Italiano",
+    	"italian_short" : "IT",
+    	"portugues" : "Portugues",
+    	"portugues_short" : "PT"
+    }
+  },
+  "message": {
+  	"presentation1": "Mi chiamo Alexandre Massimo",
+  	"presentation2": "Ho %s anni, sono nato a Venezia in Italia ed abito a Berna in Svizzera"
+  },
+  "gallery": {
+  	"title" : "Mostra di foto",
+  	"description" : "Dai una occhiata su la mia vita, godeti",
+  	"image1" : "image1",
+  	"image2" : "image2",
+  	"image3" : "image3",
+  	"image4" : "image4",
+  	"image5" : "image5",
+  	"image6" : "image6",
+  	"image7" : "image7",
+  	"image8" : "image8"
+  },
+  "description": {
+  	"descriptionTitle" : "Perderai la testa per me al primo sguardo",
+  	"description1" : "Onnora i tuoi genitori. Non gli dire buggie, e non gli nascondere niente, perche in ogni caso loro lo sapranno, non c'è verso. Aiutagli a costruire un muro di fiduccia per te, ma quando lo farai, non lasciare cadere di nuovo!",
+  	"description2" : "\"Piu legge, piu cose saprai. Quanto piu imparerai, su piu posti andrai.\"―Dr. Seuss",
+  	"seeMyPhotos" : "Guarda le mie foto"
+  },
+  "form": {
+  	"title" : "Email o numeri di telefoni sono apprezati",
+  	"description" : "Bambini, presentatevi ed entrati in contatto con me",
+  	"labelName" : "Nome:",
+  	"placeholderName" : "Inserisci nome",
+  	"labelEmail" : "Email:",
+  	"placeholderEmail" : "Inserisci email",
+  	"labelSubject" : "Argomento:",
+  	"labelMessage" : "Messagio:",
+  	"placeholderMessage" : "Messaggio",
+  	"buttonSend" : "Inviare",
+  	"subjectTitle" : "Scegli uno",
+  	"subject1" : "Richiesta d'amicizia",
+  	"subject2" : "Sentiamoci",
+  	"subject3" : "Invito per Evento",
+  	"subject4" : "Altro"
+  },
+  "likes": {
+  	"like1" : "Peppa Pig",
+  	"like2" : "Calimero",
+  	"like3" : "Peter pan",
+  	"like4" : "Pimpa"
+  },
+  "newsletter": {
+  	"title" : "Sottoscrivere la newsletter:",
+  	"labelName" : "Nome:",
+  	"labelEmail" : "Email:",
+  	"buttonSubscribe" : "Sottoscrivere"
+  }
+  
+}
