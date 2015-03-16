@@ -247,28 +247,28 @@
     <div class="row">
         <div class="col-lg-8 col-md-offset-2">
             <div class="form-wrapper marginbot-50">
-                <form id="contact-form">
+                <form action="http://localhost:9001/api/message?key=81022020150312726b0bc3f156c0714d4c70242ea92668" method="post" id="messageForm">
                 <div class="row">
     
                         <div class="form-group">
                             <label for="name" data-i18n="form.labelName">
                                 Name</label>
-                            <input type="text" class="form-control" id="name" data-i18n="[placeholder]form.placeholderName" required="required" />
+                            <input type="text" class="form-control" name="name" id="name" data-i18n="[placeholder]form.placeholderName" required="required" />
                         </div>
                         <div class="form-group">
                             <label for="email" data-i18n="form.labelEmail">
                                 Email Address</label>
-                                <input type="email" class="form-control" id="email" data-i18n="[placeholder]form.placeholderEmail" required="required" />
+                                <input type="email" class="form-control" name="email" id="email" data-i18n="[placeholder]form.placeholderEmail" required="required" />
                         </div>
                         <div class="form-group">
                             <label for="subject" data-i18n="form.labelSubject">
                                 Subject</label>
                             <select id="subject" name="subject" class="form-control" required="required">
-                                <option value="na" selected="" data-i18n="form.subjectTitle">Choose One:</option>
-                                <option value="service" data-i18n="form.subject1">Friendship request</option>
-                                <option value="suggestions" data-i18n="form.subject2">Business proposition</option>
-                                <option value="product" data-i18n="form.subject3">Event invitation</option>
-                                <option value="product" data-i18n="form.subject4">Other</option>
+                                <option value="na" selected="" data-i18n="[value]form.subjectTitle" data-i18n="form.subjectTitle">Choose One:</option>
+                                <option value="service" data-i18n="[value]form.subject1" data-i18n="form.subject1">Friendship request</option>
+                                <option value="suggestions" data-i18n="[value]form.subject2" data-i18n="form.subject2">Business proposition</option>
+                                <option value="product" data-i18n="[value]form.subject3" data-i18n="form.subject3">Event invitation</option>
+                                <option value="product" data-i18n="[value]form.subject4" data-i18n="form.subject4">Other</option>
                             </select>
                         </div>
           
@@ -276,7 +276,7 @@
                         <div class="form-group">
                             <label for="name" data-i18n="form.labelMessage">
                                 Message</label>
-                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required" data-i18n="[placeholder]form.placeholderMessage"></textarea>
+                            <textarea name="message" name="message" id="message" class="form-control" rows="9" cols="25" required="required" data-i18n="[placeholder]form.placeholderMessage"></textarea>
                         </div>
        
                         <button type="submit" class="btn btn-skin btn-block" id="btnContactUs" data-i18n="form.buttonSend">
@@ -286,22 +286,21 @@
 				
             </div>
             
-            
-            
 			<div class="text-center">
 				<p class="lead" data-i18n="newsletter.title">Subscribe to newsletter:</p>
-				<form class="form-inline">
+				<form action="http://localhost:9001/api/subscribe?key=81022020150312726b0bc3f156c0714d4c70242ea92668" method="post" id="newsletterForm" class="form-inline">
 				  <div class="form-group">
 				    <label for="exampleInputName2" data-i18n="newsletter.labelName">Name</label>
-				    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+				    <input type="text" class="form-control" name="name" id="name" placeholder="Jane Doe">
 				  </div>
 				  <div class="form-group">
 				    <label for="exampleInputEmail2" data-i18n="newsletter.labelEmail">Email</label>
-				    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+				    <input type="email" class="form-control" name="email" id="email" placeholder="jane.doe@example.com" required>
 				  </div>
 				  <button type="submit" class="btn btn-skin" data-i18n="newsletter.buttonSubscribe">Subscribe</button>
 				</form>
 			</div>
+			<div id="result">Vasco Mouta</div>
         </div>
 
     </div>	
@@ -336,7 +335,42 @@
     <script src="js/custom.js"></script>
 	<!-- Utils -->
 	<script src="js/utils.js"></script>
-
+	<!-- Newsletter submition -->
+	<script>
+		// Attach a submit handler to the form
+		$( "#newsletterForm" ).submit(function( event ) {
+			// Stop form from submitting normally
+			event.preventDefault();
+			// Get some values from elements on the page:
+			var $form = $( this ),
+			url = $form.attr( "action" );
+			var posting = $.post( url, $( "#newsletterForm" ).serializeArray());
+			// Put the results in a div
+			posting.done(function( data ) {
+				alert('Success!');
+				var content = $( data ).find( "#content" );
+				$( "#result" ).empty().append( content );
+			});
+			return false;
+		});
+		
+		// Attach a submit handler to the form
+		$( "#messageForm" ).submit(function( event ) {
+			// Stop form from submitting normally
+			event.preventDefault();
+			// Get some values from elements on the page:
+			var $form = $( this ),
+			url = $form.attr( "action" );
+			var posting = $.post( url, $( "#messageForm" ).serializeArray());
+			// Put the results in a div
+			posting.done(function( data ) {
+				alert('Thank you!');
+				var content = $( data ).find( "#content" );
+				$( "#result" ).empty().append( content );
+			});
+			return false;
+		});
+	</script>
 	<!-- Translation -->
 	<script>
 		function reloadResources() {
@@ -386,7 +420,6 @@
 			reloadResources();
 		});
 	</script>
-}
 	
 </body>
 
